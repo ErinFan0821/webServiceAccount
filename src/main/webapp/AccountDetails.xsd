@@ -10,13 +10,22 @@
             <xs:element name="AccountNumber" type="xs:string"/>
             <xs:element name="AccountName" type="xs:string"/>
             <xs:element name="AccountBalance" type="xs:double"/>
-            <xs:element name="AccountStatus" type="EnumAccountStatus"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:simpleType name="EnumAccountStatus">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Active"/>
-            <xs:enumeration value="Inactive"/>
-        </xs:restriction>
-    </xs:simpleType>
+
+    <xs:element name="AccountDetailsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountNumber" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="AccountDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="AccountDetails" type="Account"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
