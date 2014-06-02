@@ -4,12 +4,17 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:sws="http://www.springframework.org/schema/web-services"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services.xsd">
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/web-services
+                           http://www.springframework.org/schema/web-services/web-services.xsd">
 
     <context:component-scan base-package="com.erinfan"/>
     <sws:annotation-driven/>
 
-    <sws:dynamic-wsdl id="account" portTypeName="Account" locationUri="localhost:8080/accountService">
+    <sws:dynamic-wsdl id="account" portTypeName="Account"
+                      locationUri="http://localhost:8080/webServiceAccount/accountService">
         <sws:xsd location="AccountDetails.xsd"/>
     </sws:dynamic-wsdl>
 
